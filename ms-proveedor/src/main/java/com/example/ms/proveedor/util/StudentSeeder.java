@@ -61,20 +61,11 @@ class ProveedorDataLoader implements CommandLineRunner {
             Proveedor proveedor = new Proveedor();
             proveedor.setCodigoProveedor("PROV-001");
             proveedor.setNombreEmpresa("Ejemplo S.A.C.");
-            proveedor.setNombreContacto("Juan Pérez");
-            proveedor.setTelefono("+51 999999999");
             proveedor.setEmail("contacto@ejemplo.com");
+            proveedor.setTelefono("+51 999999999");
             proveedor.setDireccion("Av. Siempre Viva 123");
-            proveedor.setCiudad("Lima");
-            proveedor.setPais("Perú");
-            proveedor.setCodigoPostal("15001");
-            proveedor.setRfcNit("123456789");
-            proveedor.setTipoProveedor(TipoProveedor.NACIONAL);
-            proveedor.setCategoriaProductos("Tecnología");
-            proveedor.setCondicionesPago("30 días");
-            proveedor.setDescuentoComercial(10.0);
+            proveedor.setTipoProveedor(Proveedor.TipoProveedor.NACIONAL);
             proveedor.setActivo(true);
-            proveedor.setObservaciones("Proveedor confiable desde 2020");
 
             proveedorRepository.save(proveedor);
             System.out.println("Proveedor de ejemplo guardado.");

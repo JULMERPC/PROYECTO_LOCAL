@@ -120,3 +120,70 @@ public class ProveedorMapper {
         }
     }
 }
+
+//@Component
+//public class ProveedorMapper {
+//
+//    // Convertir de CreateDTO a Entity
+//    public Proveedor toEntity(ProveedorCreateDTO createDTO) {
+//        if (createDTO == null) {
+//            return null;
+//        }
+//
+//        Proveedor proveedor = new Proveedor();
+//        proveedor.setCodigoProveedor(createDTO.getCodigoProveedor());
+//        proveedor.setNombreEmpresa(createDTO.getNombreEmpresa());
+//        proveedor.setEmail(createDTO.getEmail());
+//        proveedor.setTelefono(createDTO.getTelefono());
+//        proveedor.setDireccion(createDTO.getDireccion());
+//        proveedor.setTipoProveedor(createDTO.getTipoProveedor());
+//        proveedor.setActivo(createDTO.getActivo() != null ? createDTO.getActivo() : true);
+//
+//        return proveedor;
+//    }
+//
+//    // Convertir de Entity a ResponseDTO
+//    public ProveedorResponseDTO toResponseDTO(Proveedor proveedor) {
+//        if (proveedor == null) {
+//            return null;
+//        }
+//
+//        ProveedorResponseDTO responseDTO = new ProveedorResponseDTO();
+//        responseDTO.setId(proveedor.getId());
+//        responseDTO.setCodigoProveedor(proveedor.getCodigoProveedor());
+//        responseDTO.setNombreEmpresa(proveedor.getNombreEmpresa());
+//        responseDTO.setEmail(proveedor.getEmail());
+//        responseDTO.setTelefono(proveedor.getTelefono());
+//        responseDTO.setDireccion(proveedor.getDireccion());
+//        responseDTO.setTipoProveedor(proveedor.getTipoProveedor());
+//        responseDTO.setActivo(proveedor.getActivo());
+//
+//        return responseDTO;
+//    }
+//
+//    // Actualizar Entity desde UpdateDTO
+//    public void updateEntityFromDTO(ProveedorUpdateDTO updateDTO, Proveedor proveedor) {
+//        if (updateDTO == null || proveedor == null) {
+//            return;
+//        }
+//
+//        if (updateDTO.getNombreEmpresa() != null) {
+//            proveedor.setNombreEmpresa(updateDTO.getNombreEmpresa());
+//        }
+//        if (updateDTO.getEmail() != null) {
+//            proveedor.setEmail(updateDTO.getEmail());
+//        }
+//        if (updateDTO.getTelefono() != null) {
+//            proveedor.setTelefono(updateDTO.getTelefono());
+//        }
+//        if (updateDTO.getDireccion() != null) {
+//            proveedor.setDireccion(updateDTO.getDireccion());
+//        }
+//        if (updateDTO.getTipoProveedor() != null) {
+//            proveedor.setTipoProveedor(updateDTO.getTipoProveedor());
+//        }
+//        if (updateDTO.getActivo() != null) {
+//            proveedor.setActivo(updateDTO.getActivo());
+//        }
+//    }
+//}
