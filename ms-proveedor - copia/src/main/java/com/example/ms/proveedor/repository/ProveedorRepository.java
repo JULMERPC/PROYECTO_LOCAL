@@ -16,6 +16,8 @@ public interface ProveedorRepository extends JpaRepository<Proveedor, Long> {
     // Buscar por nombre de empresa
     List<Proveedor> findByNombreEmpresaContainingIgnoreCase(String nombreEmpresa);
 
+    List<Proveedor> getProveedorById(Long id);
+
     // Buscar por país
     List<Proveedor> findByPaisIgnoreCase(String pais);
 

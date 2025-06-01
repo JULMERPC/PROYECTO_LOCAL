@@ -16,7 +16,6 @@ import java.util.Map;
 public class GlobalExceptionHandler {
 
 
-
     @ExceptionHandler(ProveedorNotFoundException.class)
     public ResponseEntity<ErrorResponse> handleProveedorNotFound(ProveedorNotFoundException ex) {
         ErrorResponse error = new ErrorResponse(

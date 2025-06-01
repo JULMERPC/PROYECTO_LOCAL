@@ -1,12 +1,12 @@
 package com.example.ms.proveedor.exception;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
+@Setter
+@Getter
 @Data
 //@NoArgsConstructor
 //@AllArgsConstructor
@@ -24,8 +24,12 @@ public class ErrorResponse {
     public ErrorResponse() {
     }
 
-    public ErrorResponse(int value, String message, LocalDateTime now) {
+    public ErrorResponse(int status, String message, LocalDateTime timestamp) {
+        this.status = status;
+        this.message = message;
+        this.timestamp = timestamp;
     }
+
 
     public int getStatus() {
         return status;
@@ -35,19 +39,19 @@ public class ErrorResponse {
         this.status = status;
     }
 
-    public LocalDateTime getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(LocalDateTime timestamp) {
-        this.timestamp = timestamp;
-    }
-
     public String getMessage() {
         return message;
     }
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public LocalDateTime getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
     }
 }

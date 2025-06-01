@@ -3,20 +3,40 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import jdk.jshell.Snippet;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "proveedores")
+//@Table(name = "proveedores")
 @Data
 //@NoArgsConstructor
 //@AllArgsConstructor
 public class Proveedor {
 
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Long id;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "codigo_proveedor")
     private Long id;
+
+
+    @Column(name = "activo")
+    private Boolean activo;
+
+
+
+    @PrePersist
+    public void prePersist() {
+        if (activo == null) {
+            activo = true;
+        }
+    }
+
 
     @Column(name = "nombre_empresa")
     @NotBlank(message = "El nombre de la empresa es obligatorio")
@@ -28,8 +48,8 @@ public class Proveedor {
     private String contacto;
 
     @Column(name = "correo_electronico")
-    @Email(message = "El formato del correo electrónico no es válido")
-    @Size(max = 255, message = "El correo electrónico no puede exceder 255 caracteres")
+//    @Email(message = "El formato del correo electrónico no es válido")
+//    @Size(max = 255, message = "El correo electrónico no puede exceder 255 caracteres")
     private String correoElectronico;
 
     @Column(name = "telefono")
